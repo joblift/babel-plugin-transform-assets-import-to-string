@@ -2,16 +2,13 @@
 
 > Babel plugin that transforms image assets import and requires to urls / cdn
 
-[![npm][npm-badge]][npm-link]
-[![Build Status][circle-badge]][circle-link]
-
 ## Table of Contents
 
-* [About](#about)
-* [Installation](#installation)
-* [Usage](#usage)
-  * [via babelrc](#via-babelrc)
-  * [via Node API](#via-node-api)
+-   [About](#about)
+-   [Installation](#installation)
+-   [Usage](#usage)
+    -   [via babelrc](#via-babelrc)
+    -   [via Node API](#via-node-api)
 
 ## About
 
@@ -37,12 +34,12 @@ const image1 = 'http://your.cdn.address/assets/icon1.svg';
 // ajaxAsyncRequest(image)
 ```
 
-See the spec for more [examples](https://github.com/yeojz/babel-plugin-transform-assets-import-to-string/blob/master/test/index.spec.js).
+See the spec for more [examples](https://github.com/marudor/babel-plugin-transform-assets-import-to-string/blob/master/test/index.spec.js).
 
 ## Installation
 
 ```
-$> npm install babel-plugin-transform-assets-import-to-string --save
+$> npm install @marudor/babel-plugin-transform-assets-import-to-string --save
 ```
 
 ## Usage
@@ -51,15 +48,15 @@ $> npm install babel-plugin-transform-assets-import-to-string --save
 
 ```json
 {
-  "plugins": [
-    [
-      "transform-assets-import-to-string",
-      {
-        "baseDir": "/assets",
-        "baseUri": "http://your.cdn.address"
-      }
+    "plugins": [
+        [
+            "@marudor/babel-plugin-transform-assets-import-to-string",
+            {
+                "baseDir": "/assets",
+                "baseUri": "http://your.cdn.address"
+            }
+        ]
     ]
-  ]
 }
 ```
 
@@ -67,15 +64,15 @@ $> npm install babel-plugin-transform-assets-import-to-string --save
 
 ```js
 require('babel-core').transform('code', {
-  plugins: [
-    [
-      'transform-assets-import-to-string',
-      {
-        baseDir: '/assets',
-        baseUri: 'http://your.cdn.address'
-      }
-    ]
-  ]
+    plugins: [
+        [
+            '@marudor/babel-plugin-transform-assets-import-to-string',
+            {
+                baseDir: '/assets',
+                baseUri: 'http://your.cdn.address',
+            },
+        ],
+    ],
 });
 ```
 
@@ -85,22 +82,17 @@ By default, it will transform the following extensions: `.gif, .jpeg, .jpg, .png
 
 ```json
 {
-  "plugins": [
-    [
-      "transform-assets-import-to-string",
-      {
-        "extensions": [".jpg", ".png"]
-      }
+    "plugins": [
+        [
+            "@marudor/babel-plugin-transform-assets-import-to-string",
+            {
+                "extensions": [".jpg", ".png"]
+            }
+        ]
     ]
-  ]
 }
 ```
 
 ## License
 
-`babel-plugin-transform-assets-import-to-string` is [MIT licensed](./LICENSE)
-
-[circle-badge]: https://img.shields.io/circleci/project/github/yeojz/babel-plugin-transform-assets-import-to-string/master.svg?style=flat-square
-[circle-link]: https://circleci.com/gh/yeojz/babel-plugin-transform-assets-import-to-string
-[npm-badge]: https://img.shields.io/npm/v/babel-plugin-transform-assets-import-to-string.svg?style=flat-square
-[npm-link]: https://www.npmjs.com/package/babel-plugin-transform-assets-import-to-string
+`@marudor/babel-plugin-babel-plugin-transform-assets-import-to-string` is [MIT licensed](./LICENSE)

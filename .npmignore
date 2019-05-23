@@ -3,3 +3,4 @@ src
 coverage
 tests
 test
+.nyc_output

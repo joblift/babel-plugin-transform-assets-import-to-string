@@ -3,6 +3,6 @@
     "tests/**/*"
   ],
   "require": [
-    "babel-register"
+    "@babel/register"
   ]
 }

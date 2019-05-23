@@ -1,0 +1,27 @@
+{
+    "singleQuote": true,
+    "tabWidth": 4,
+    "printWidth": 120,
+    "semi": true,
+    "trailingComma": "es5",
+    "overrides": [
+        {
+            "files": "config/intl/*.json",
+            "options": {
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": "public/**/*.json",
+            "options": {
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": "script/flowGeneration/**/*",
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}
