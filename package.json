@@ -1,5 +1,5 @@
 {
-    "name": "@marudor/babel-plugin-transform-assets-import-to-string",
+    "name": "@joblift/babel-plugin-transform-assets-import-to-string",
     "version": "1.2.1",
     "description": "Babel plugin that transforms image assets import and requires to urls / cdn",
     "main": "lib/index.js",
@@ -65,5 +65,8 @@
         "prettier": "^1.14.0",
         "rimraf": "^2.6.1"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "publishConfig": {
+        "@joblift:registry": "https://nexus.jol.pm/repository/npm-hosted/"
+    }
 }
