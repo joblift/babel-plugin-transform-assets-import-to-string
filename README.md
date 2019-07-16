@@ -34,12 +34,12 @@ const image1 = 'http://your.cdn.address/assets/icon1.svg';
 // ajaxAsyncRequest(image)
 ```
 
-See the spec for more [examples](https://github.com/marudor/babel-plugin-transform-assets-import-to-string/blob/master/test/index.spec.js).
+See the spec for more [examples](https://github.com/joblift/babel-plugin-transform-assets-import-to-string/blob/master/test/index.spec.js).
 
 ## Installation
 
 ```
-$> npm install @marudor/babel-plugin-transform-assets-import-to-string --save
+$> npm install @joblift/babel-plugin-transform-assets-import-to-string --save
 ```
 
 ## Usage
@@ -50,7 +50,7 @@ $> npm install @marudor/babel-plugin-transform-assets-import-to-string --save
 {
     "plugins": [
         [
-            "@marudor/babel-plugin-transform-assets-import-to-string",
+            "@joblift/babel-plugin-transform-assets-import-to-string",
             {
                 "baseDir": "/assets",
                 "baseUri": "http://your.cdn.address"
@@ -66,7 +66,7 @@ $> npm install @marudor/babel-plugin-transform-assets-import-to-string --save
 require('babel-core').transform('code', {
     plugins: [
         [
-            '@marudor/babel-plugin-transform-assets-import-to-string',
+            '@joblift/babel-plugin-transform-assets-import-to-string',
             {
                 baseDir: '/assets',
                 baseUri: 'http://your.cdn.address',
@@ -84,7 +84,7 @@ By default, it will transform the following extensions: `.gif, .jpeg, .jpg, .png
 {
     "plugins": [
         [
-            "@marudor/babel-plugin-transform-assets-import-to-string",
+            "@joblift/babel-plugin-transform-assets-import-to-string",
             {
                 "extensions": [".jpg", ".png"]
             }
@@ -95,4 +95,4 @@ By default, it will transform the following extensions: `.gif, .jpeg, .jpg, .png
 
 ## License
 
-`@marudor/babel-plugin-babel-plugin-transform-assets-import-to-string` is [MIT licensed](./LICENSE)
+`@joblift/babel-plugin-babel-plugin-transform-assets-import-to-string` is [MIT licensed](./LICENSE)
