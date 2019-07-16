@@ -1,0 +1,7 @@
+name: babel-plugin-transform-assets-import-to-string
+type: library
+language: javascript
+chapter: frontend
+responsibles:
+- Marius Bechtloff
+- Hinrich Riedel
