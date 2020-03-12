@@ -4,8 +4,18 @@ function getVariableName(node) {
     }
 }
 
-function replaceNode(scope, uri) {
-    const content = scope.types.StringLiteral(uri);
+function replaceNode(scope, baseUri, filepath, envName) {
+    const filepathLiteral = scope.types.StringLiteral(filepath);
+    const baseUriLiteral = scope.types.StringLiteral(baseUri);
+    const fromEnvExpression = scope.types.memberExpression(
+        scope.types.memberExpression(scope.types.identifier('process'), scope.types.identifier('env'), false),
+        scope.types.identifier(envName),
+        false
+    );
+    const baseUriExpression = scope.types.parenthesizedExpression(
+        scope.types.logicalExpression('||', fromEnvExpression, baseUriLiteral)
+    );
+    const content = scope.types.binaryExpression('+', baseUriExpression, filepathLiteral);
 
     if (scope.callee === 'require') {
         scope.path.replaceWith(content);
