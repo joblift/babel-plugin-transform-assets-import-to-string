@@ -5,17 +5,25 @@ function getVariableName(node) {
 }
 
 function replaceNode(scope, baseUri, filepath, envName) {
-    const filepathLiteral = scope.types.StringLiteral(filepath);
-    const baseUriLiteral = scope.types.StringLiteral(baseUri);
-    const fromEnvExpression = scope.types.memberExpression(
-        scope.types.memberExpression(scope.types.identifier('process'), scope.types.identifier('env'), false),
-        scope.types.identifier(envName),
-        false
-    );
-    const baseUriExpression = scope.types.parenthesizedExpression(
-        scope.types.logicalExpression('||', fromEnvExpression, baseUriLiteral)
-    );
-    const content = scope.types.binaryExpression('+', baseUriExpression, filepathLiteral);
+    
+    let content;
+    
+    if(envName) {
+        const fromEnvExpression = scope.types.memberExpression(
+            scope.types.memberExpression(scope.types.identifier('process'), scope.types.identifier('env'), false),
+            scope.types.identifier(envName),
+            false
+        );
+        const baseUriExpression = scope.types.parenthesizedExpression(
+            scope.types.logicalExpression('||', fromEnvExpression, scope.types.StringLiteral(''))
+        );
+        const filepathLiteral = scope.types.StringLiteral(filepath);
+
+        content = scope.types.binaryExpression('+', baseUriExpression, filepathLiteral);
+    } else {
+        content = scope.types.StringLiteral(baseUri + filepath);
+    }
+    
 
     if (scope.callee === 'require') {
         scope.path.replaceWith(content);

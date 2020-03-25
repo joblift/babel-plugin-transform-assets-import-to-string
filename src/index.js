@@ -4,7 +4,7 @@ const defaultOptions = {
     baseUri: '',
     extensions: ['.gif', '.jpeg', '.jpg', '.png', '.svg'],
     flatten: false,
-    envName: 'ASSET_BASE_URI'
+    envName: null
 };
 
 function isRequireStatement(p) {
