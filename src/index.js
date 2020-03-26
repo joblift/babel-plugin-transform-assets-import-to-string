@@ -4,6 +4,7 @@ const defaultOptions = {
     baseUri: '',
     extensions: ['.gif', '.jpeg', '.jpg', '.png', '.svg'],
     flatten: false,
+    envName: null
 };
 
 function isRequireStatement(p) {

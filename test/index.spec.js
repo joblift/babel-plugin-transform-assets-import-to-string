@@ -76,4 +76,18 @@ describe('index', () => {
 
         expect(result).to.equal("const test = 'something';");
     });
+
+    it('should hash filename', () => {
+        const config = { ...baseConfig, hash: 'filename', baseUri: '', baseDir: '' };
+        const result = transformCode(getFixtures('import-icon.js'), config).code;
+
+        expect(result).to.equal('const test = "80c59330e4b57f48e2f365dcb95140d9350bb816.svg";');
+    });
+
+    it('should replace baseUri from env', () => {
+        const config = { ...baseConfig, envName: 'ASSET_BASE' };
+        const result = transformCode(getFixtures('import-image.js'), config).code;
+
+        expect(result).to.equal('const test = (process.env.ASSET_BASE || "") + "/assets/path/to/icon.svg";');
+    });
 });

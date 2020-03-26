@@ -17,7 +17,7 @@ function transform(scope, options) {
 
     fp = fileHash(fp, absPath, options);
 
-    replaceNode(scope, `${options.baseUri}${fp}`);
+    replaceNode(scope, options.baseUri, fp, options.envName);
 }
 
 export default transform;

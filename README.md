@@ -76,6 +76,8 @@ require('babel-core').transform('code', {
 });
 ```
 
+### Configure extensions
+
 By default, it will transform the following extensions: `.gif, .jpeg, .jpg, .png, .svg` if `extensions` option is not defined. To configure a custom list, just add the `extensions` array as an option.
 
 **Note:** leading `.` (dot) is required.
@@ -92,6 +94,26 @@ By default, it will transform the following extensions: `.gif, .jpeg, .jpg, .png
     ]
 }
 ```
+
+### Override baseUri during runtime
+
+It supports overriding the baseUri from `process.env`. The name of the env can be set by using the envName property (default is ASSET_BASE_URI).
+
+```json
+{
+    "plugins": [
+        [
+            "@joblift/babel-plugin-transform-assets-import-to-string",
+            {
+                "envName": "FOO_BAR"
+            }
+        ]
+    ]
+}
+```
+
+If `process.env.FOO_BAR` is set in runtime, it will be used as baseUri.
+
 
 ## License
 
